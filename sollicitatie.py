@@ -75,7 +75,7 @@ if manVrouw == "m" or "M":
         manSnor = True
     else:
         manSnor = False
-        print(manSnor)
+    print(manSnor)
 elif manVrouw == "v" or "V":
     vrouwLengte = int(input ("Heeft u rood krullend haar? Zo ja, wat is de lengte? in centimeters! "))
     if vrouwLengte > 20:
@@ -85,12 +85,14 @@ elif manVrouw == "v" or "V":
     print(vrouwLengte)
 
 werkervaring = [dierenDressuur, jongleren, acrobatiek]
-overig = [gewicht, lengte, diploma, vrachtwagenRijbewijs, hogeHoed, certificaat]
+overig = [gewicht, lengte, diploma, vrachtwagenRijbewijs, hogeHoed, certificaat, manSnor]
 
-overig = any(overig)
-werkervaring = all(werkervaring)
+overig = all(overig)
+werkervaring = any(werkervaring)
 
-x = overig
-y = werkervaring
+aangenomen = overig and werkervaring
 
-print ("Beste,",naam,"U heeft",y,"werkervaring en",x,"")
+if aangenomen == True:
+    print ("Beste",naam," gefeliciteerd, u bent aangenomen.")
+else:
+    print ("Beste",naam," helaas, u bent niet aagenomen.")
